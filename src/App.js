@@ -1,10 +1,9 @@
+import ReactRogue from "./react-rogue";
 
-function App() {
-  return (
-    <div className="App">
-      Hello World
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <ReactRogue width={40} height={40} tilesize={16} />
+  </div>
+);
 
 export default App;
