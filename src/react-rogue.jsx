@@ -11,7 +11,7 @@ const ReactRogue = ({ width, height, tilesize }) => {
   const handleInput = (action, data) => {
     let newWorld = new World();
     Object.assign(newWorld, world);
-    newWorld.move(data.x, data.y);
+    newWorld.movePlayer(data.x, data.y);
     setWorld(newWorld);
   }
 
@@ -28,6 +28,7 @@ const ReactRogue = ({ width, height, tilesize }) => {
     let newWorld = new World();
     Object.assign(newWorld, world);
     newWorld.createCellularMap();
+    newWorld.moveToSpace(world.entities[0]);
     setWorld(newWorld);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

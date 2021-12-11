@@ -14,8 +14,30 @@ class World {
     }
   }
 
+  moveToSpace(entity) {
+    for (let x = entity.x; x < this.width; x++) {
+      for (let y = entity.y; y < this.height; y++) {
+        if (this.worldmap[x][y] === 0) {
+          entity.x = x;
+          entity.y = y;
+          return;
+        }
+      }
+    }
+  }
+
+  isWall(x, y) {
+    return (this.worldmap[x][y] === 1 || this.worldmap[x] === undefined || this.worldmap[y] === undefined);
+  };
+
   movePlayer(dx, dy) {
-    this.entities[0].move(dx, dy);
+    let tempPlayer = this.entities[0].copyPlayer();
+    tempPlayer.move(dx, dy);
+    if (this.isWall(tempPlayer.x, tempPlayer.y)) {
+      console.log("wall");
+    } else {
+      this.entities[0].move(dx, dy);
+    }
   }
 
   createCellularMap() {

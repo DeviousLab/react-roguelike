@@ -16,6 +16,12 @@ class Player {
     ctx.font = '20px Arial';
     ctx.fillText('@', this.x * this.size, this.y * this.size);
   }
+
+  copyPlayer() {
+    let newPlayer = new Player();
+    Object.assign(newPlayer, this);
+    return newPlayer;
+  }
 }
 
 export default Player;
