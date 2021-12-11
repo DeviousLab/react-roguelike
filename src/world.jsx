@@ -1,15 +1,21 @@
 import { Map } from 'rot-js';
+import Player from './player';
 
 class World {
   constructor(width, height, tilesize) {
     this.width = width;
     this.height = height;
     this.tilesize = tilesize;
+    this.entities = [new Player(0, 0, 16)];
+
     this.worldmap = new Array(this.width);
     for (let x = 0; x < this.width; x++) {
       this.worldmap[x] = new Array(this.height);
     }
-    this.createCellularMap();
+  }
+
+  movePlayer(dx, dy) {
+    this.entities[0].move(dx, dy);
   }
 
   createCellularMap() {
@@ -31,6 +37,7 @@ class World {
         if (this.worldmap[x][y] === 1) this.drawWall(ctx, x, y);
       }
     }
+    this.entities.forEach(entity => entity.draw(ctx));
   }
 
   drawWall(ctx, x, y) {
