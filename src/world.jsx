@@ -51,6 +51,7 @@ class World {
       console.log(entity);
       entity.action('take',this);
       entity.action('attack',this);
+      entity.action('go',this);
       return;
     }
 

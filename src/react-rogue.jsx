@@ -7,7 +7,7 @@ import Spawner from "./spawner";
 const ReactRogue = ({ width, height, tilesize }) => {
   const canvasRef = useRef();
   // const [player, setPlayer] = React.useState(new Player(1, 2, tilesize));
-  const [world, setWorld] = React.useState(new World(width, height, tilesize));
+  const [world, setWorld] = useState(new World(width, height, tilesize));
   let inputManger = new InputManger();
   const handleInput = (action, data) => {
     let newWorld = new World();
@@ -33,6 +33,7 @@ const ReactRogue = ({ width, height, tilesize }) => {
     let spawner = new Spawner(newWorld);
     spawner.spawnLoot(10);
     spawner.spawnEnemies(5);
+    spawner.spawnStairs();
     setWorld(newWorld);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

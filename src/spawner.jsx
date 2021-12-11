@@ -1,5 +1,6 @@
 import Loot from './loot.jsx';
 import Monster from './monster.jsx';
+import Stairs from './stairs.jsx';
 
 const lootTable = [
   {
@@ -92,6 +93,12 @@ class Spawner {
     this.spawn(spawnCount, () => {
       return new Monster(randNum(this.world.width - 1), randNum(this.world.height - 1), this.world.tilesize, monsterTable[randNum(monsterTable.length)]);
     });
+  }
+
+  spawnStairs() {
+    let stairs = new Stairs(this.world.width - 10, this.world.height - 10, this.world.tilesize);
+    this.world.addEntity(stairs);
+    this.world.moveToSpace(stairs);
   }
 
 }
