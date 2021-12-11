@@ -84,13 +84,13 @@ class Spawner {
 
   spawnLoot(spawnCount) {
     this.spawn(spawnCount, () => {
-      return new Loot(randNum(this.world.width), randNum(this.world.height), this.world.tilesize, lootTable[randNum(lootTable.length)]);
+      return new Loot(randNum(this.world.width - 1), randNum(this.world.height - 1), this.world.tilesize, lootTable[randNum(lootTable.length)]);
     });
   }
 
   spawnEnemies(spawnCount) {
     this.spawn(spawnCount, () => {
-      return new Monster(randNum(this.world.width), randNum(this.world.height), this.world.tilesize, monsterTable[randNum(monsterTable.length)]);
+      return new Monster(randNum(this.world.width - 1), randNum(this.world.height - 1), this.world.tilesize, monsterTable[randNum(monsterTable.length)]);
     });
   }
 
