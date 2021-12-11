@@ -6,11 +6,15 @@ class Entity {
     this.attributes = { ...attributes };
   }
 
+  action(verb, world) {
+    console.log(`Verb: ${verb}`);
+  }
+
   draw(ctx) {
     ctx.fillStyle = this.attributes.color || 'white';
     ctx.textBaseline = 'hanging';
     ctx.font = '16px Arial';
-    ctx.fillText(this.attributes.ascii, this.x * this.size + (this.attributes.offset ? this.attributes.offset.x : 0), this.y * this.size) + (this.attributes.offset ? this.attributes.offset.y : 0);
+    ctx.fillText(this.attributes.ascii, this.x * this.size + (this.attributes.offset ? this.attributes.offset.x : 0), this.y * this.size + (this.attributes.offset ? this.attributes.offset.y : 0));
   }
 }
 

@@ -14,6 +14,10 @@ class World {
     }
   }
 
+  addEntity(entity) {
+    this.entities.push(entity);
+  }
+
   moveToSpace(entity) {
     for (let x = entity.x; x < this.width; x++) {
       for (let y = entity.y; y < this.height; y++) {
