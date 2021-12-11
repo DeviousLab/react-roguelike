@@ -9534,6 +9534,11 @@ rollup@^1.31.1:
     "@types/node" "*"
     acorn "^7.1.0"
 
+rot-js@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/rot-js/-/rot-js-2.2.0.tgz#75f794822a2052e6f5a7c8a5594da44d7bc79528"
+  integrity sha512-DlqvRiOl3LnwTuActd+nMcj9tt9uycPaDezb2bJVDqXMdPJ2dkO3daJ5c/q+fYcKvIY9P5FUl9Tp24llClUFig==
+
 rsvp@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
