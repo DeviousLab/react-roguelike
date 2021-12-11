@@ -32,6 +32,7 @@ const ReactRogue = ({ width, height, tilesize }) => {
     newWorld.moveToSpace(world.entities[0]);
     let spawner = new Spawner(newWorld);
     spawner.spawnLoot(10);
+    spawner.spawnEnemies(5);
     setWorld(newWorld);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -48,6 +49,9 @@ const ReactRogue = ({ width, height, tilesize }) => {
     <canvas ref={canvasRef} width={width * tilesize} height={height * tilesize} style={{ border: '1px solid black', background: 'DimGrey' }} />
     <ul>
       {world.entities[0].inventory.map((item, index) => (<li key={index}>{item.attributes.name}</li>))}
+    </ul>
+    <ul>
+      {world.history.map((item, index) => (<li key={index}>{item}</li>))}
     </ul>
     </>
   );
