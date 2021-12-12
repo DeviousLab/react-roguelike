@@ -48,7 +48,6 @@ class World {
     tempPlayer.move(dx, dy);
     let entity = this.getEntityAtLocation(tempPlayer.x, tempPlayer.y);
     if (entity) {
-      console.log(entity);
       entity.action('take',this);
       entity.action('attack',this);
       entity.action('go',this);
@@ -56,7 +55,7 @@ class World {
     }
 
     if (this.isWall(tempPlayer.x, tempPlayer.y)) {
-      console.log("wall");
+      this.addToHistory('You bump into a wall.');
     } else {
       this.entities[0].move(dx, dy);
     }
