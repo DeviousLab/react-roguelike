@@ -6,7 +6,6 @@ import Spawner from "./spawner";
 
 const ReactRogue = ({ width, height, tilesize }) => {
   const canvasRef = useRef();
-  // const [player, setPlayer] = React.useState(new Player(1, 2, tilesize));
   const [world, setWorld] = useState(new World(width, height, tilesize));
   let inputManger = new InputManger();
   const handleInput = (action, data) => {
@@ -39,7 +38,6 @@ const ReactRogue = ({ width, height, tilesize }) => {
   }, []);
 
   useEffect(() => {
-    console.log('Draw to canvas');
     const ctx = canvasRef.current.getContext("2d");
     ctx.clearRect(0, 0, (width * tilesize), (height * tilesize));
     world.draw(ctx);

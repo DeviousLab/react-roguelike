@@ -45,28 +45,28 @@ const monsterTable = [
     name: 'Goblin',
     color: 'lightgrey',
     ascii: 'G',
-    health: 10,
+    health: 2,
     offset: { x: 2, y: 3 },
   },
   {
     name: 'Orc',
     color: 'darkgrey',
     ascii: 'O',
-    health: 20,
+    health: 5,
     offset: { x: 4, y: 3 },
   },
   {
     name: 'Troll',
     color: 'darkgreen',
     ascii: 'T',
-    health: 30, 
+    health: 10, 
     offset: { x: 3, y: 2 },
   },
   {
     name: 'Giant',
     color: 'darkred',
     ascii: 'A',
-    health: 40,
+    health: 15,
     offset: { x: 4, y: 2 },
   }
 ];

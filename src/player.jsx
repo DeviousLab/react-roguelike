@@ -6,7 +6,7 @@ class Player extends Entity {
   attributes = {
     name: "Player",
     ascii: "@",
-    health: 100,
+    health: 30,
   }
 
   move(dx, dy) {
